@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <a href="#fictifs">
+                        <img src="assets/images/logo.svg" alt="Logo" />
+                    </a>
+                </div>
+                <nav>
+                    <a href="#fictifs">Projets fictifs</a>
+                    <a href="#professionnels">Projets professionnels</a>
+                    <a href="#personnels">Projets personnels</a>
+                    <a href="#presentation">Présentation</a>
+                    <a href="mailto:sandyxer6@hotmail.fr">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="fictifs">
+                <div class="grid-fictifs">
+                    <img src="assets/images/fictif-01.jpg" />
+                    <img src="assets/images/fictif-02.jpg" />
+                    <img src="assets/images/fictif-03.jpg" />
+                    <img src="assets/images/fictif-04.jpg" />
+                    <img src="assets/images/fictif-05.jpg" />
+                    <img src="assets/images/fictif-06.jpg" />
+                    <img src="assets/images/fictif-07.jpg" />
+                    <img src="assets/images/fictif-08.jpg" />
+                </div>
+            </section>
+
+            <section id="professionnels">
+                <div class="grid-pro">
+                    <div class="image-wrapper">
+                        <img src="assets/images/pro-01.jpg" alt="Projet 01" />
+                        <a
+                            href="https://www.discogs.com/label/3898833-Providance-Recordz"
+                            class="hotspot"
+                            target="_blank"
+                        ></a>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/pro-02.jpg" alt="Projet 02" />
+                        <a
+                            href="https://www.discogs.com/release/36523177-Zoonosis-X-Cell-02-Erase-The-World"
+                            class="hotspot"
+                            target="_blank"
+                        ></a>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/pro-03.jpg" alt="Projet 03" />
+                        <a
+                            href="https://www.discogs.com/release/34383397-Tetrips-Live-Dans-LSud-De-Paris-"
+                            class="hotspot"
+                            target="_blank"
+                        ></a>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/pro-04.jpg" alt="Projet 04" />
+                        <a
+                            href="https://www.discogs.com/release/34383397-Tetrips-Live-Dans-LSud-De-Paris-"
+                            class="hotspot"
+                            target="_blank"
+                        ></a>
+                    </div>
+                    <img src="assets/images/overlay.png" class="pro-separator" alt="">
+<video src="assets/videos/pro-video-01.mp4" controls></video>
+
+<video src="assets/videos/pro-video-02.mp4" controls></video>
+<video src="assets/videos/pro-video-03.mp4" controls></video>
+<video src="assets/videos/pro-video-04.mp4" controls></video>
+
+            <section id="personnels">
+                <div class="grid-personnels">
+                    <img src="assets/images/perso-01.jpg" />
+                    <img src="assets/images/perso-02.jpg" />
+                </div>
+            </section>
+
+            <section id="presentation">
+                <div class="presentation-container">
+                    <img src="assets/images/presentation.jpg" />
+                </div>
+            </section>
+        </main>
+
+        <!-- SCRIPT MENU ACTIF -->
+        <script>
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("nav a[href^='#']");
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.offsetHeight;
+                    if (
+                        pageYOffset >= sectionTop &&
+                        pageYOffset < sectionTop + sectionHeight
+                    ) {
+                        current = section.getAttribute("id");
+                    }
+                });
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
+
+}
